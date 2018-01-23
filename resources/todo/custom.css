@@ -1,0 +1,17 @@
+body {
+    padding-top: 5rem;
+}
+
+.no-items {
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+
+.fixed-table {
+    table-layout: fixed;
+}
+
+.truncate-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

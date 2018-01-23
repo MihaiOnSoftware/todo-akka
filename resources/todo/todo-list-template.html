@@ -1,0 +1,39 @@
+<div class="card" data-ng-init="todo.load()">
+    <div class="card-block">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table fixed-table">
+                    <thead class="thead-inverse">
+                    <tr>
+                        <th class="truncate-text">Todos
+                            <a data-ng-if="!todo.creating" class="float-right" href="javascript:;"
+                               data-ng-click="todo.toggleCreating()"><i class="fa fa-plus"></i></a>
+                            <a data-ng-if="todo.creating" class="float-right" href="javascript:;"
+                               data-ng-click="todo.toggleCreating()"><i class="fa fa-minus"></i></a>
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr data-ng-if="todo.creating">
+                        <td>
+                            <div data-create-todo data-load="todo.load"></div>
+                        </td>
+                    </tr>
+                    <tr data-ng-if="todo.list.length === 0">
+                        <td class="no-items">No Todos</td>
+                    </tr>
+                    <tr data-ng-repeat="item in todo.list">
+                        <td class="">
+                            <div class="row truncate-text">
+                                <span class="col-md-9 truncate-text">{{item.description}}</span>
+                                <span class="col-md-2 truncate-text">{{item.priority}}</span>
+                                <div class="col-md-1" data-remove-todo="item" data-load="todo.load" data-css="float-right"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

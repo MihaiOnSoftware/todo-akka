@@ -10,7 +10,8 @@ libraryDependencies += "com.typesafe.akka" %% "akka-http-spray-json" % akkaHttpV
 libraryDependencies += "com.typesafe.akka" %% "akka-http-xml"        % akkaHttpVersion
 libraryDependencies += "com.typesafe.akka" %% "akka-stream"          % akkaVersion
 
-libraryDependencies += "com.typesafe.akka" %% "akka-http-testkit" % akkaHttpVersion % Test
+libraryDependencies += "com.typesafe.akka" %% "akka-http-testkit"   % akkaHttpVersion % Test
+libraryDependencies += "com.typesafe.akka" %% "akka-stream-testkit" % akkaVersion     % Test
 libraryDependencies += "org.scalatest"     %% "scalatest"         % "3.0.1"         % Test
 libraryDependencies += "org.scalamock"     %% "scalamock-scalatest-support" % "3.6.0" % Test
 

@@ -39,7 +39,7 @@ class TodoRoutingSpec
       status should ===(StatusCodes.OK)
       contentType should ===(ContentTypes.`application/json`)
 
-      entityAs[String] should ===("""{"todos":[{"id":"0","description":"Hi, I'm new"}]}""")
+      entityAs[String] should ===("""{"todos":[{"description":"Hi, I'm new","id":"0"}]}""")
     }
   }
 
@@ -54,7 +54,7 @@ class TodoRoutingSpec
 
       contentType should ===(ContentTypes.`application/json`)
 
-      entityAs[String] should ===("""{"id":"0","description":"Play with Akka Http"}""")
+      entityAs[String] should ===("""{"description":"Play with Akka Http","id":"0"}""")
     }
 
     Get() ~> listRoute ~> check {
@@ -62,7 +62,7 @@ class TodoRoutingSpec
 
       contentType should ===(ContentTypes.`application/json`)
 
-      entityAs[String] should ===("""{"todos":[{"id":"0","description":"Play with Akka Http"}]}""")
+      entityAs[String] should ===("""{"todos":[{"description":"Play with Akka Http","id":"0"}]}""")
     }
   }
 
@@ -75,7 +75,7 @@ class TodoRoutingSpec
 
       contentType should ===(ContentTypes.`application/json`)
 
-      entityAs[String] should ===("""{"id":"0","description":"Hi, I'm new"}""")
+      entityAs[String] should ===("""{"description":"Hi, I'm new","id":"0"}""")
     }
   }
 

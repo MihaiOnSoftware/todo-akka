@@ -56,7 +56,7 @@ class TodoRoutesSpec extends WordSpec with Matchers with ScalaFutures with Scala
 
         contentType should ===(ContentTypes.`application/json`)
 
-        entityAs[String] should ===("""{"id":"0","description":"Play with Akka Http"}""")
+        entityAs[String] should ===("""{"description":"Play with Akka Http","id":"0"}""")
       }
     }
 
@@ -69,7 +69,7 @@ class TodoRoutesSpec extends WordSpec with Matchers with ScalaFutures with Scala
 
         contentType should ===(ContentTypes.`application/json`)
 
-        entityAs[String] should ===("""{"id":"0","description":"Hi, I'm new"}""")
+        entityAs[String] should ===("""{"description":"Hi, I'm new","id":"0"}""")
       }
     }
 

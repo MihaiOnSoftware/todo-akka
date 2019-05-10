@@ -2,7 +2,7 @@ package com.mpopescu.todoakka.todo.persistence
 
 import com.mpopescu.todoakka.todo.domain.Todo
 import org.scalatest.TryValues._
-import org.scalatest.{FlatSpec, Matchers}
+import org.scalatest.{ FlatSpec, Matchers }
 
 import scala.util.Failure
 

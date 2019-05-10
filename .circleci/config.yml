@@ -1,0 +1,25 @@
+version: 2
+jobs:
+  test:
+    docker:
+      - image: circleci/openjdk:8-jdk
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "build.sbt" }}
+            - v1-dependencies-
+      - run: cat /dev/null | sbt test:compile
+      - save_cache:
+          paths:
+            - ~/.m2
+          key: v1-dependencies--{{ checksum "build.sbt" }}
+      - run: cat /dev/null | sbt coverage test coverageReport
+      - run:
+          name: Send Coverage Report
+          command: ./scripts/codecov.sh
+workflows:
+  version: 2
+  test:
+    jobs:
+      - test
